@@ -1,0 +1,23 @@
+name: sample3
+
+map:
+  fact:
+    name: salesorderheader
+    database: adventureworks
+    #limit:
+      #on: CustomerID
+      #between: 5 #range is inclusive
+      #to: 10
+  dimensions:
+    - name: customer
+      database: adventureworks
+      key: CustomerID
+
+    - name: currencyrate
+      database: adventureworks
+      key: CurrencyRateID
+      fields:
+        - name: AverageRate
+          alias: avg_rate
+
+        - name: EndOfDayRate
